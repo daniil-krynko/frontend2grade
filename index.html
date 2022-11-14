@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">
-    <title>Daniil Krynko 205. Lab 9</title>
+    <script src="jquery/jquery-3.6.1.js"></script>
+    <link rel="stylesheet" href="jquery/jquery-ui.css">
+    <title>Daniil Krynko 205. Lab 11</title>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item">
-            <div class="nickname" id="UserName">User</div>
-            <div class="score" id="UserScore">0</div>
-            <svg width="170" height="245" class="card" id="UserCard"></svg>
-        </div>
-        <div class="flex-item">
-            <div class="title" id="RoundCnt"></div>
-            <button onclick="Generate()" class="generate">Generate</button>
-        </div>
-        <div class="flex-item">
-            <div class="nickname" id="CompName">Computer</div>
-            <div class="score" id="CompScore">0</div>
-            <svg width="170" height="245" class="card" id="CompCard"></svg>
-        </div>
+    <div id="Card">Word</div>
+    <div id="Number">1/10</div>
+    <div><input type="text" placeholder="Введіть переклад"></div>
+    <button class="ui-button ui-widget ui-corner-all">Далі</button>
+    <div class="title">Статистика</div>
+    <div id="Score">
+        <span id="True" class="scCounter">0</span>
+        <span id="False" class="scCounter">0</span>
     </div>
     <script src="script/script.js"></script>
 </body>

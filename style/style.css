@@ -1,49 +1,49 @@
 body {
-    margin-top: 10vh;
-    padding: 0%;
+    text-align: center;
+    margin-top: 20vh;
 }
-.generate {
-    background-color: greenyellow;
-    padding: 25px 50px;
-    border-radius: 20px;
-    font-size: large;
-    color: black;
-    margin: 10px;
-    cursor: pointer;
-    align-self: center;
+#Card {
+    margin: 0 30% 30px;
+    padding: 7%;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 10%;
+    box-shadow: 5px 10px 8px #888888;
+    font-size: xx-large;
+    font-weight: bolder;
 }
-.title {
+#Number {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: xx-large;
+    color: olive;
+}
+input {
+    text-align: center;
+    margin-bottom: 10px;
     font-size: larger;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: whitesmoke;
+    border-radius: 5px;
 }
-.nickname {
-    margin: 15px;
-    font-size: x-large;
-}
-.score {
-    background-color: cyan;
-    border-radius: 10px;
-    padding: 10px 50px;
-    margin: 10px;
-}
-.card {
+button {
     margin-bottom: 15px;
 }
-
-.flex-container {
-    display: flex;
-    text-align: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+.title {
+    font-size: x-large;
+    color: blue;
+    margin-bottom: 10px;
 }
-.flex-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
+.scCounter {
+    font-size: x-large;
+    font-weight: bold;
 }
-@media (max-width: 580px) {
-    .flex-container {
-        flex-direction: column;
-      }
+#True {
+    color: green;
+    margin-right: 15%;
+}
+#False {
+    color: red;
+    margin-left: 15%;
 }
