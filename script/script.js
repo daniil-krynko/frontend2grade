@@ -1,7 +1,32 @@
+$('input[name="diff"][value="0"]').prop('checked', true);
+$(`input[name="diff"]`).checkboxradio({});
+$(`input[name="diff"]`).change(restart);
 $("#Modal").hide();
 $(".modalWindow button").click(restart);
 $("body>button").click(next);
-let eng = [
+let eng = [[
+  'salmon',
+  'whip',
+  'bridle',
+  'adapter',
+  'shawl',
+  'corrosion',
+  'sled',
+  'bean',
+  'vineyard',
+  'squirrel'
+], [
+  'first aid kit',
+  'hyperbole',
+  'bouquet',
+  'lamp',
+  'stuffing',
+  'lantern',
+  'bilirubin',
+  'martyr',
+  'pigtail',
+  'crematorium'
+], [
   'nag',
   'elbow',
   'magician',
@@ -12,8 +37,30 @@ let eng = [
   'cast',
   'australopithecine',
   'wineglass'
-];
-let ukr = [
+]];
+let ukr = [[
+  'лосось',
+  'батог',
+  'вуздечка',
+  'адаптер',
+  'хустка',
+  'корозія',
+  'санки',
+  'біб',
+  'виноградник',
+  'білка',
+], [
+  'аптечка',
+  'гіпербола',
+  'букет',
+  'світильник',
+  'фарш',
+  'ліхтар',
+  'білірубін',
+  'мученик',
+  'кіска',
+  'крематорій'
+], [
   "шкапа",
   "лікоть",
   "волхв",
@@ -24,8 +71,8 @@ let ukr = [
   "зліпок",
   "австралопитек",
   "келих"
-];
-let scTrue = 0, scFalse = 0, counter = 0;
+]];
+let scTrue = 0, scFalse = 0, counter = 0, diff = $('input[name="diff"]:checked').val();
 function shuffle(eng, ukr) {
   for (let i = eng.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -34,7 +81,7 @@ function shuffle(eng, ukr) {
   }
 }
 function next() {
-  if ($('input')[0].value.toLowerCase() == ukr[counter].toLowerCase()) {
+  if ($('input[type="text"]')[0].value.toLowerCase() == ukr[diff][counter].toLowerCase()) {
     $('#True').text(++scTrue);
   } else {
     $('#False').text(++scFalse);
@@ -45,23 +92,24 @@ function next() {
       $("#Message").text("Вітаємо! Ви вгадали всі слова")
       $("#Message").css("color", "green");
     } else {
-      $("#Message").text(`Ви вгадали ${scTrue} з ${eng.length}`);
+      $("#Message").text(`Ви вгадали ${scTrue} з ${eng[diff].length}`);
       $("#Message").css("color", "red");
     }
     return;
   }
-  $("#Card").text(eng[++counter]);
-  $("#Counter").text(`${counter+1}/10`);
-  $('input')[0].value = null;
+  $("#Card").text(eng[diff][++counter]);
+  $("#Counter").text(`${counter+1}/${eng[diff].length}`);
+  $('input[type="text"]')[0].value = null;
 }
 function restart() {
-  shuffle(eng, ukr);
+  shuffle(eng[diff], ukr[diff]);
   counter = scTrue = scFalse = 0;
+  diff = $('input[name="diff"]:checked').val();
   $("#Counter").text(`${counter+1}/10`);
   $("#True").text(scTrue);
   $("#False").text(scFalse);
-  $("#Card").text(eng[counter]);
+  $("#Card").text(eng[diff][counter]);
   $("#Modal").hide();
 }
-shuffle(eng, ukr);
-$("#Card").text(eng[counter]);
+shuffle(eng[diff], ukr[diff]);
+$("#Card").text(eng[diff][counter]);

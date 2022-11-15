@@ -2,8 +2,28 @@ body {
     text-align: center;
     margin-top: 20vh;
 }
+fieldset {
+    margin-top: -10%;
+    font-size: x-large;
+}
+fieldset>input {
+    margin-right: 30px;
+}
+fieldset>label {
+    font-size: large;
+    font-weight: bold;
+}
+label[for="Easy"] {
+    color: green;
+}
+label[for="Medium"] {
+    color: orange;
+}
+label[for="Hard"] {
+    color: red;
+}
 #Card {
-    margin: 0 30% 30px;
+    margin: 5% 30% 30px;
     padding: 7%;
     background-color: black;
     color: whitesmoke;

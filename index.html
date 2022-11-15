@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">
-    <script src="jquery/jquery-3.6.1.js"></script>
     <link rel="stylesheet" href="jquery/jquery-ui.css">
+    <link rel="stylesheet" href="jquery/redmond.css">
+    <script src="jquery/jquery-3.6.1.js"></script>
+    <script src="jquery/jquery-ui.js"></script>
     <title>Daniil Krynko 205. Lab 11</title>
 </head>
 <body>
+    <fieldset>
+      <legend>Виберіть складність</legend>
+      <label for="Easy">Легко</label>
+      <input type="radio" name="diff" value="0" id="Easy">
+      <label for="Medium">Середньо</label>
+      <input type="radio" name="diff" value="1" id="Medium">
+      <label for="Hard">Важко</label>
+      <input type="radio" name="diff" value="2" id="Hard">
+    </fieldset>
     <div class="modalWindow" id="Modal">
         <div class="modalContent">
             <div id="Message"></div>
