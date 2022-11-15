@@ -12,11 +12,11 @@ body {
     font-size: xx-large;
     font-weight: bolder;
 }
-#Number {
+#Counter {
     margin-bottom: 10px;
     font-weight: bold;
     font-size: xx-large;
-    color: olive;
+    color: darkcyan;
 }
 input {
     text-align: center;
@@ -46,4 +46,25 @@ button {
 #False {
     color: red;
     margin-left: 15%;
+}
+.modalWindow{
+    text-align: center;
+    z-index: 1;
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+    overflow: clip;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+}
+.modalContent{
+    background-color: whitesmoke;
+    text-align: center;
+    font-weight: bolder;
+    padding: 30px;
+}
+#Message {
+    margin-bottom: 10px;
+    font-size: x-large;
 }
