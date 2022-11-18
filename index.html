@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">
-    <title>Daniil Krynko 205. Lab 9</title>
+    <title>Daniil Krynko 205. Lab 10</title>
 </head>
 <body>
-    <div class="flex-container">
-        <div class="flex-item">
-            <div class="nickname" id="UserName">User</div>
-            <div class="score" id="UserScore">0</div>
-            <svg width="170" height="245" class="card" id="UserCard"></svg>
-        </div>
-        <div class="flex-item">
-            <div class="title" id="RoundCnt"></div>
-            <button onclick="Generate()" class="generate">Generate</button>
-        </div>
-        <div class="flex-item">
-            <div class="nickname" id="CompName">Computer</div>
-            <div class="score" id="CompScore">0</div>
-            <svg width="170" height="245" class="card" id="CompCard"></svg>
-        </div>
+    <div>
+        <div id="UserName" class="nickname">User</div>
+        <div class="title" id="RoundCnt">Спроба 1 з 3</div>
+        <button id="Generate">Generate</button>
     </div>
-    <script src="script/script.js"></script>
+    <div class="grid-container">
+        <div class="grid-item" id="00"><img src="images/apple.png"></div>
+        <div class="grid-item" id="01"><img src="images/seven.png"></div>
+        <div class="grid-item" id="02"><img src="images/grape.png"></div>
+        <div class="grid-item" id="10"><img src="images/plum.png"></i></div>
+        <div class="grid-item" id="11"><img src="images/apple.png"></div>
+        <div class="grid-item" id="12"><img src="images/strawberry.png"></div>
+        <div class="grid-item" id="20"><img src="images/cherry.png"></div>
+        <div class="grid-item" id="21"><img src="images/orange.png"></div>
+        <div class="grid-item" id="22"><img src="images/apple.png"></div>
+    </div>
+    <!-- <script src="script/script.js"></script> -->
 </body>
 </html>

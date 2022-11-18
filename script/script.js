@@ -1,95 +1,55 @@
 let userName = prompt("Enter your name");
 if (userName != null && userName != "") {
-   document.getElementById("UserName").innerText = userName;
+   document.getElementById("UserName").textContent = userName;
 }
-let roundCnt = 0, userNumber, compNumber, userScore = 0, compScore = 0;
-let cards = {
-    2:{ // Валет
-        0: `<use href="images/svg-cards.svg#club_jack"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_jack"/>`,
-        2: `<use href="images/svg-cards.svg#heart_2"/>`,
-        3: `<use href="images/svg-cards.svg#spade_2"/>`
-    },
-    3:{ // Королева
-        0: `<use href="images/svg-cards.svg#club_queen"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_queen"/>`,
-        2: `<use href="images/svg-cards.svg#heart_queen"/>`,
-        3: `<use href="images/svg-cards.svg#spade_queen"/>`
-    },
-    4:{ // Король
-        0: `<use href="images/svg-cards.svg#club_king"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_king"/>`,
-        2: `<use href="images/svg-cards.svg#heart_king"/>`,
-        3: `<use href="images/svg-cards.svg#spade_king"/>`
-    },
-    6:{ // 6
-        0: `<use href="images/svg-cards.svg#club_6"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_6"/>`,
-        2: `<use href="images/svg-cards.svg#heart_6"/>`,
-        3: `<use href="images/svg-cards.svg#spade_6"/>`
-    },
-    7:{ // 7
-        0: `<use href="images/svg-cards.svg#club_7"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_7"/>`,
-        2: `<use href="images/svg-cards.svg#heart_7"/>`,
-        3: `<use href="images/svg-cards.svg#spade_7"/>`
-    },
-    8:{ // 8
-        0: `<use href="images/svg-cards.svg#club_8"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_8"/>`,
-        2: `<use href="images/svg-cards.svg#heart_8"/>`,
-        3: `<use href="images/svg-cards.svg#spade_8"/>`
-    },
-    9:{ // 9
-        0: `<use href="images/svg-cards.svg#club_9"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_9"/>`,
-        2: `<use href="images/svg-cards.svg#heart_9"/>`,
-        3: `<use href="images/svg-cards.svg#spade_9"/>`
-    },
-    10:{ // 10
-        0: `<use href="images/svg-cards.svg#club_10"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_10"/>`,
-        2: `<use href="images/svg-cards.svg#heart_10"/>`,
-        3: `<use href="images/svg-cards.svg#spade_10"/>`
-    },
-    11:{ // Туз
-        0: `<use href="images/svg-cards.svg#club_1"/>`,
-        1: `<use href="images/svg-cards.svg#diamond_1"/>`,
-        2: `<use href="images/svg-cards.svg#heart_1"/>`,
-        3: `<use href="images/svg-cards.svg#spade_1"/>`
-    },
-};
-function Randomizer() {
-    let rndm;
-    do {
-        rndm = Math.floor(Math.random() * 10 + 2);
-    } while (rndm == 5);
-    return rndm;
+let roundCnt = 0, maxRnd = 3;
+let slots = [3][3];
+let symbols = [
+    `<img src="images/apple.png">`,
+    `<img src="images/cherry.png">`,
+    `<img src="images/grape.png">`,
+    `<img src="images/orange.png">`,
+    `<img src="images/plum.png">`,
+    `<img src="images/seven.png">`,
+    `<img src="images/strawberry.png">`,
+    `<img src="images/watermelon.png">`
+];
+function RowTest(el, index, arr) {
+    if (index === 0) {
+        return true;
+    } else {
+        return (el.answer === arr[index - 1].answer);
+    }
 }
-function Generate() {
-    if (roundCnt == 3) {
-        if (userScore > compScore) {
-            alert(`${document.getElementById("UserName").innerText} won!`);
-            location.reload();
-            return;
-        }
-        else if (compScore > userScore) {
-            alert(`Computer won!`);
-            location.reload();
-            return;
-        } else {
-            alert("Draw!")
-            location.reload();
-            return;
+function ColumnTest() {
+    for (let j = 0; j < 3; j++) {
+        for (let i = 0; i < 3; i++) {
+            if (slots[i][j]) {
+                
+            }
         }
     }
-    userNumber = Randomizer();
-    compNumber = Randomizer();
-    document.getElementById("UserCard").innerHTML = cards[userNumber][Math.floor(Math.random() * 4)];
-    document.getElementById("CompCard").innerHTML = cards[compNumber][Math.floor(Math.random() * 4)];
-    console.log(`user:comp - ${userNumber}:${compNumber}`);
-    document.getElementById("UserScore").innerText = userScore += userNumber;
-    document.getElementById("CompScore").innerText = compScore += compNumber;
-    roundCnt++;
-    document.getElementById("RoundCnt").innerText = `Спроба ${roundCnt} з 3`;
+    return true;
+}
+function Randomizer() {
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+
+        }
+        if(!ColumnTest()){
+            i--;
+        }
+    }
+    if (row[0].every(RowTest) || row[1].every(RowTest) || row[2].every(RowTest)) {
+        alert("YOU WON!!!");
+        roundCnt = 0, maxRnd = 3;
+    }
+}
+function Generate() {
+    if (roundCnt == maxRnd) {
+        alert(`You lose. Better luck next time!`);
+        roundCnt = 0, maxRnd = 3;
+    }
+    Randomizer();
+    document.getElementById("RoundCnt").innerText = `Спроба ${++roundCnt} з ${maxRnd}`;
 }
