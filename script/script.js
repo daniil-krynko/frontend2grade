@@ -31,20 +31,8 @@ function RowTest(currentRow) {
     return true;
 }
 
-function ColumnTest(currentColumn) {
-    if (document.getElementById(`${0}${currentColumn}`).innerHTML ==
-    document.getElementById(`${1}${currentColumn}`).innerHTML ==
-    document.getElementById(`${2}${currentColumn}`).innerHTML) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
 function Randomizer() {
     for (let j = 0; j < 3; j++) {
-        if(j != 0 && !ColumnTest(j))
-            j--;
         for (let i = 0; i < 3; i++) {
             document.getElementById(`${i}${j}`).innerHTML =
             symbols[Math.floor(Math.random() * symbols.length)];
