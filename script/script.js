@@ -4,14 +4,14 @@ if (userName != null && userName != "")
 document.getElementById("Generate").addEventListener("click", Generate);
 let roundCnt = 1, maxRnd = 3;
 let symbols = [
-    `<img src="images/apple.png">`,
-    `<img src="images/cherry.png">`,
-    `<img src="images/grape.png">`,
-    `<img src="images/orange.png">`,
-    `<img src="images/plum.png">`,
-    `<img src="images/seven.png">`,
-    `<img src="images/strawberry.png">`,
-    `<img src="images/watermelon.png">`
+    `<img alt="apple" src="images/apple.png">`,
+    `<img alt="cherry" src="images/cherry.png">`,
+    `<img alt="grape" src="images/grape.png">`,
+    `<img alt="orange" src="images/orange.png">`,
+    `<img alt="plum" src="images/plum.png">`,
+    `<img alt="seven" src="images/seven.png">`,
+    `<img alt="strawberry" src="images/strawberry.png">`,
+    `<img alt="watermelon" src="images/watermelon.png">`
 ];
 
 function Victory() {
