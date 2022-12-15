@@ -2,25 +2,15 @@ label {
     float: left;
     margin-right: 10px;
 }
-.inp {
-    clear: both;
-    text-align: right;
-    line-height: 25px;
-}
-.task {
-    float: left;
+body {
+    height: 100%;
 }
 .butt {
     margin: 20px;
 }
-.showFunction {
-    clear: both;
-}
 #MyCanvas {
-    height: 300px;
-    width: 500px;
-    padding: 15px;
-    border-style: solid;
+    display: block;
+    border-style: dashed;
     border-width: medium;
     border-color: black;
 }

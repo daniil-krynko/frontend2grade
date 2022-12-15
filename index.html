@@ -6,20 +6,16 @@
     <title>Daniil Krynko 205. Lab 3</title>
 </head>
 <body>
-    <div class="task">
-        <div class="inp">
-            <label for="intervalFrom">From: </label>
-            <input type="text" name="intervalFrom" id="IntervalFrom"><br>
-            <label for="intervalTo">To: </label>
-            <input type="text" name="intervalTo" id="IntervalTo"><br>
-            <label for="step">Step: </label>
-            <input type="text" name="step" id="Step"><br>
-            <input class="butt" type="button" onclick="TabulateF()" value="Tabulate function">
-        </div>
-    </div>
-    <div class="showFunction">
-        <canvas id="MyCanvas"></canvas>
-    </div>
+    <form>
+        <label for="intervalFrom">From: </label><br>
+        <input type="number" name="intervalFrom" id="IntervalFrom"><br>
+        <label for="intervalTo">To: </label><br>
+        <input type="number" name="intervalTo" id="IntervalTo"><br>
+        <label for="step">Step: </label><br>
+        <input type="number" name="step" id="Step"><br>
+        <input class="butt" type="button" onclick="TabulateF()" value="Tabulate function">
+    <form>
+    <canvas id="MyCanvas" width="500" height="500"></canvas>
+    <script src="script/script.js"></script>
 </body>
-<script src="script/script.js"></script>
 </html>
