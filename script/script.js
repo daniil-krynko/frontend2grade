@@ -20,20 +20,32 @@ function TabulateF() {
     let x = from;
     console.log("While loop");
     while (to >= x) {
-        console.log(`${x} : ${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+<<<<<<< HEAD
+        console.log(`${x}:${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+=======
+        console.log(`${x}:${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+>>>>>>> 721e20c7c69fd749af25e406df8797256ed9116f
         x += step;
     }
     /* DoWhile loop */
     x = from;
     console.log("DoWhile loop");
     do {
-        console.log(`${x} : ${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+<<<<<<< HEAD
+        console.log(`${x}:${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+=======
+        console.log(`${x}:${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+>>>>>>> 721e20c7c69fd749af25e406df8797256ed9116f
         x += step;
     } while (to >= x);
     /* For loop */
     console.log("For loop");
     for (x = from; to >= x; x += step) {
-        console.log(`${x} : ${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+<<<<<<< HEAD
+        console.log(`${x}:${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+=======
+        console.log(`${x}:${m.log(m.pow(x, 2) + m.exp(m.abs(x)) + 1)}`);
+>>>>>>> 721e20c7c69fd749af25e406df8797256ed9116f
     }
     // Axises
     let ctx = document.getElementById("MyCanvas").getContext("2d");
